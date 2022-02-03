@@ -15,12 +15,12 @@ const images = [
 
 const ulRef = document.querySelector('.gallery');
 
-const makeLiRef = ({ url, alt }) => {
+const makeLiRefs = ({ url, alt }) => {
   return `<li>
   <img src="${url}" alt= "${alt}" width ="370" height ="250">
 </li>`;
 };
 
-const makeListMarkup = images.map(makeLiRef).join('');
+const makeListMarkup = images.map(makeLiRefs).join('');
 
 ulRef.insertAdjacentHTML('beforeend', makeListMarkup);

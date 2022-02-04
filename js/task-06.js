@@ -6,11 +6,14 @@ console.log(inputNum);
 
 inputRef.addEventListener('blur', () => {
   const userSymbolsNum = inputRef.value.length;
-  if (userSymbolsNum !== inputNum) {
-    inputRef.classList.add('invalid');
-    inputRef.classList.remove('valid');
+  if (userSymbolsNum === inputNum) {
+    changeClass('valid', 'invalid');
     return;
   }
-  inputRef.classList.add('valid');
-  inputRef.classList.remove('invalid');
+  changeClass('invalid', 'valid');
 });
+
+function changeClass(addClass, removeClass) {
+  inputRef.classList.remove(removeClass);
+  inputRef.classList.add(addClass);
+}
